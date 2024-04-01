@@ -21,4 +21,10 @@ export class TareasService {
     tareas.splice(index, 1);
     localStorage.setItem(this.localStorageKey, JSON.stringify(tareas));
   }
+  eliminarTodas(): void {
+    // Eliminar todas las tareas del localStorage
+    if (typeof localStorage !== 'undefined') {
+      localStorage.removeItem(this.localStorageKey);
+    }
+  }
 }

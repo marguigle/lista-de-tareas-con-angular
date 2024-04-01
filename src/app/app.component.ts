@@ -30,4 +30,8 @@ export class AppComponent implements OnInit {
     this._tareasService.eliminatTarea(index);
     this.listaTareas = this._tareasService.getTareas();
   }
+  eliminarTodas() {
+    this._tareasService.eliminarTodas();
+    this.listaTareas = [];
+  }
 }
