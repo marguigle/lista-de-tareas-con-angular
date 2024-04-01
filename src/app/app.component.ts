@@ -20,9 +20,11 @@ export class AppComponent implements OnInit {
     this.listaTareas = this._tareasService.getTareas();
   }
   agreagarTarea() {
-    this._tareasService.agregarTarea(this.nuevaTarea);
-    this.nuevaTarea = '';
-    this.listaTareas = this._tareasService.getTareas();
+    if (this.nuevaTarea.trim() !== '') {
+      this._tareasService.agregarTarea(this.nuevaTarea);
+      this.nuevaTarea = '';
+      this.listaTareas = this._tareasService.getTareas();
+    }
   }
   eliminarTarea(index: number) {
     this._tareasService.eliminatTarea(index);
