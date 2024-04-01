@@ -1,9 +1,14 @@
 <div>
   <h2>Lista de tareas</h2>
   <ul>
-    <div>
-      <input type="text" placeholder=" Nueva tarea" [(ngModel)]="nuevaTarea" />
-      <button (click)="agreagarTarea()">Agregar Tarea</button>
+    <div class="input-tareas-container">
+      <input
+        type="text"
+        placeholder=" Nueva tarea"
+        [(ngModel)]="nuevaTarea"
+        class="input-nueva-tarea"
+      />
+      <button (click)="agreagarTarea()">Agregar</button>
     </div>
 
     <li *ngFor="let tarea of listaTareas; let i = index">
